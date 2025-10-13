@@ -28,27 +28,27 @@ const HeroSection = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Learn History,<br />
-            Earn Rewards,<br />
-            <span className="text-accent">Make an Impact</span>
+            Let's Remember,<br />
+            Let's Learn,<br />
+            <span className="text-accent">Let's Pass It On</span>
           </h1>
-
+          
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            INGANZO is a gamified platform for learning Rwandan history.
-            Explore lessons, play quizzes, upload testimonies, and compete with others while preserving our heritage.
+            Twibuke is a living archive of Rwandan wisdom — told by the voices that lived it. 
+            Connect with elders, preserve stories, and honor our shared heritage.
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link to="/lessons">
+            <Link to="/stories">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-golden">
                 <Play className="h-5 w-5 mr-2" />
-                Start Learning
+                Explore Stories
               </Button>
             </Link>
-            <Link to="/leaderboard">
+            <Link to="/upload">
               <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                <Users className="h-5 w-5 mr-2" />
-                View Leaderboard
+                <Upload className="h-5 w-5 mr-2" />
+                Share Your Wisdom
               </Button>
             </Link>
           </div>
