@@ -1,3 +1,21 @@
+import React from "react";
+
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+	variant?: "primary" | "secondary" | "ghost";
+};
+
+const styles = {
+	primary: "bg-emerald-700 text-white hover:bg-emerald-800",
+	secondary: "border border-emerald-700 text-emerald-800 hover:bg-emerald-50",
+	ghost: "text-emerald-800 hover:bg-emerald-50",
+};
+
+const Button: React.FC<Props> = ({ variant = "primary", className, ...rest }) => {
+	return <button className={`rounded-2xl px-4 py-2 font-semibold ${styles[variant]} ${className || ""}`} {...rest} />;
+};
+
+export default Button;
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
