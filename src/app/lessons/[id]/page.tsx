@@ -1,3 +1,4 @@
+import Link from 'next/link'
 type Props = { params: { id: string } }
 
 export default function LessonDetailPage({ params }: Props) {
@@ -17,7 +18,7 @@ export default function LessonDetailPage({ params }: Props) {
         <aside className="space-y-4">
           <div className="p-4 rounded-xl border bg-white">
             <div className="font-semibold">Ready to test your knowledge?</div>
-            <a href={`/quiz/${id}`} className="mt-3 inline-block px-4 py-2 rounded-xl bg-primary text-white">Take Quiz</a>
+            <Link href={`/quiz/${id}`} className="mt-3 inline-block px-4 py-2 rounded-xl bg-primary text-white">Take Quiz</Link>
           </div>
           <div className="p-4 rounded-xl border bg-white">
             <div className="font-semibold">Progress</div>

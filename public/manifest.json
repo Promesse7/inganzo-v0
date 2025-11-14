@@ -1,0 +1,11 @@
+{
+  "name": "INGANZO",
+  "short_name": "INGANZO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#0b6b45",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}

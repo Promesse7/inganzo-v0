@@ -1,3 +1,4 @@
+import Link from 'next/link'
 type Props = { params: { lessonId: string } }
 
 export default function QuizRunnerPage({ params }: Props) {
@@ -20,6 +21,9 @@ export default function QuizRunnerPage({ params }: Props) {
         </div>
         <div className="mt-6 h-2 rounded bg-amber/20">
           <div className="h-full w-1/3 rounded bg-primary" />
+        </div>
+        <div className="mt-6 text-right">
+          <Link href={`/lessons/${lessonId}`} className="text-sm text-primary">Back to lesson</Link>
         </div>
       </div>
     </section>
