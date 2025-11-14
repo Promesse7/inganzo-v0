@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import NavBar from "@/components/ui/NavBar";
+import Footer from "@/components/ui/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Target, Award, MapPin, Mail } from "lucide-react";
@@ -51,7 +51,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <NavBar />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-success to-success/80 text-success-foreground">

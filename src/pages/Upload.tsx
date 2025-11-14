@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import NavBar from "@/components/ui/NavBar";
+import Footer from "@/components/ui/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ import { Upload, Video, Mic, FileText, Heart, Camera } from "lucide-react";
 const UploadPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <NavBar />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-warm to-warm/80 text-warm-foreground">

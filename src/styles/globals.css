@@ -1,6 +1,17 @@
-/* Global styles scaffold; Tailwind already configured via index.css */
-body {
-  background: #faf9f6;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0b6b45;
+  --color-amber: #d9822b;
 }
 
+html, body, #__next {
+  height: 100%;
+}
 
+body {
+  background-color: #faf7f2;
+  color: #1f2937;
+}

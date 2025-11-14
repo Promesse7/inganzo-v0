@@ -9,6 +9,7 @@ import Upload from "./pages/Upload";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import Quiz from "./pages/Quiz";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/stories" element={<Stories />} />
+          <Route path="/quiz/:lessonId" element={<Quiz />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />

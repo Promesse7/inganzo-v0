@@ -1,30 +1,13 @@
-export type Quiz = {
-  id: string;
-  lessonId: string;
-  questions: Array<
-    | { id: string; type: "mcq"; prompt: string; options: string[]; correct: string }
-    | { id: string; type: "fill"; prompt: string; answer: string }
-  >;
-};
-
 export const lessons = [
-  { id: "lesson_1", title: "Precolonial Societies", era: "Precolonial", summary: "Life and organization before colonial era.", points: 20, durationMin: 8, difficulty: "easy" as const },
-  { id: "lesson_2", title: "Colonial Impacts", era: "Colonial", summary: "Changes introduced during colonization.", points: 30, durationMin: 12, difficulty: "medium" as const },
-];
+  { id: 'l1', title: 'Precolonial Societies', era: 'Precolonial', summary: 'Overview of precolonial life', mediaRefs: [], transcriptRef: '', quizId: 'q1', tags: ['people','events'], published: true },
+  { id: 'l2', title: 'Colonial Administration', era: 'Colonial', summary: 'Colonial period changes', mediaRefs: [], transcriptRef: '', quizId: 'q2', tags: ['policy'], published: true }
+]
 
-export const quizzes: Quiz[] = [
-  {
-    id: "quiz_1",
-    lessonId: "lesson_1",
+export const quizzes = {
+  q1: {
+    lessonId: 'l1',
     questions: [
-      { id: "q1", type: "mcq", prompt: "What era is this lesson about?", options: ["Precolonial", "Colonial", "Post1994"], correct: "Precolonial" },
-      { id: "q2", type: "fill", prompt: "Name one social structure.", answer: "clan" },
-    ],
-  },
-];
-
-export function getQuizByLessonId(lessonId: string) {
-  return quizzes.find((q) => q.lessonId === lessonId);
+      { id: 'q1-1', type: 'mcq', prompt: 'Primary era for kingdoms?', options: ['Precolonial','Colonial'], correct: 'Precolonial', points: 10 }
+    ]
+  }
 }
-
-

@@ -1,11 +1,8 @@
-import * as admin from "firebase-admin";
-import { Change, EventContext, QueryDocumentSnapshot } from "firebase-functions/v1";
+import * as admin from 'firebase-admin'
+if (!admin.apps.length) admin.initializeApp()
 
-export async function onUploadCreated(snap: QueryDocumentSnapshot, _context: EventContext) {
-  const data = snap.data();
-  // Placeholder: simulate STT + safety flags
-  const flags: string[] = [];
-  await snap.ref.update({ flags, status: "pending" });
+export async function onUploadCreated(snap: admin.firestore.DocumentSnapshot) {
+  const data = snap.data() as any
+  const flags = [] as string[]
+  await snap.ref.update({ flags, status: 'pending' })
 }
-
-

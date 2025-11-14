@@ -1,48 +1,16 @@
-import React from "react";
+type Item = { type: 'quiz' | 'upload'; payload: unknown }
 
-type QueueItem =
-	| { type: "quizAttempt"; payload: { quizId: string; data: any } }
-	| { type: "uploadMetadata"; payload: { data: any } };
-
-const KEY = "inganzo_offline_queue_v1";
-
-function load(): QueueItem[] {
-	try {
-		const raw = localStorage.getItem(KEY);
-		return raw ? (JSON.parse(raw) as QueueItem[]) : [];
-	} catch {
-		return [];
-	}
+export default function useOfflineQueue() {
+  const key = 'inganzo-offline-queue'
+  function enqueue(item: Item) {
+    const current = JSON.parse(localStorage.getItem(key) || '[]')
+    current.push(item)
+    localStorage.setItem(key, JSON.stringify(current))
+  }
+  function flush() {
+    const current = JSON.parse(localStorage.getItem(key) || '[]') as Item[]
+    localStorage.setItem(key, '[]')
+    return current
+  }
+  return { enqueue, flush }
 }
-
-function save(items: QueueItem[]) {
-	try {
-		localStorage.setItem(KEY, JSON.stringify(items));
-	} catch {
-		// ignore
-	}
-}
-
-export function useOfflineQueue() {
-	const [items, setItems] = React.useState<QueueItem[]>(() => load());
-
-	const enqueue = (item: QueueItem) => {
-		setItems((prev) => {
-			const next = [...prev, item];
-			save(next);
-			return next;
-		});
-	};
-
-	const dequeue = () => {
-		setItems((prev) => {
-			const next = prev.slice(1);
-			save(next);
-			return next;
-		});
-	};
-
-	return { items, enqueue, dequeue };
-}
-
-

@@ -1,42 +1,13 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    function isSignedIn() {
-      return request.auth != null;
-    }
-    function isOwner(userId) {
-      return isSignedIn() && request.auth.uid == userId;
-    }
     match /users/{userId} {
-      allow read: if isOwner(userId);
-      allow write: if isOwner(userId);
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
     }
-    match /lessons/{lessonId} {
+    match /{document=**} {
       allow read: if true;
-      allow write: if false;
-    }
-    match /quizzes/{quizId} {
-      allow read: if true;
-      allow write: if false;
-    }
-    match /gameSessions/{sessionId} {
-      allow read: if isOwner(resource.data.userId);
-      allow create: if isSignedIn();
-      allow update, delete: if false;
-    }
-    match /uploads/{uploadId} {
-      allow read: if isOwner(resource.data.uploaderId);
-      allow create: if isSignedIn();
-      allow update, delete: if false;
-    }
-    match /moderation/{id} {
-      allow read, write: if false;
-    }
-    match /leaderboards/{id} {
-      allow read: if true;
-      allow write: if false;
+      allow write: if request.auth != null;
     }
   }
 }
-
-

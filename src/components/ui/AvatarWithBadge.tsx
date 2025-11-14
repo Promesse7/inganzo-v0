@@ -1,37 +1,8 @@
-import React from "react";
+type Props = { level?: 'beginner' | 'intermediate' | 'expert' }
 
-type Props = {
-	name: string;
-	imageUrl?: string;
-	level?: "beginner" | "intermediate" | "expert";
-};
-
-const levelToRing = {
-	beginner: "ring-gray-300",
-	intermediate: "ring-emerald-500",
-	expert: "ring-amber-400",
-};
-
-const AvatarWithBadge: React.FC<Props> = ({ name, imageUrl, level = "beginner" }) => {
-	const initials = name
-		.split(" ")
-		.map((p) => p[0])
-		.join("")
-		.toUpperCase()
-		.slice(0, 2);
-	return (
-		<div className={`inline-flex h-14 w-14 items-center justify-center rounded-full ring-4 ${levelToRing[level]}`}>
-			{imageUrl ? (
-				<img src={imageUrl} alt={name} className="h-12 w-12 rounded-full object-cover" />
-			) : (
-				<div className="h-12 w-12 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-semibold">
-					{initials}
-				</div>
-			)}
-		</div>
-	);
-};
-
-export default AvatarWithBadge;
-
-
+export default function AvatarWithBadge({ level = 'beginner' }: Props) {
+  const ring = level === 'beginner' ? 'ring-gray-300' : level === 'intermediate' ? 'ring-blue-400' : 'ring-yellow-400'
+  return (
+    <div className={`h-20 w-20 rounded-full ring-4 ${ring} flex items-center justify-center bg-gray-100`}>🙂</div>
+  )
+}
