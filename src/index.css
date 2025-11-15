@@ -2,145 +2,202 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TWIBUKE Design System - Rwandan Cultural Heritage
-Earth tones + gold palette for remembrance and tradition
-All colors MUST be HSL.
-*/
+/* INGANZO - Modern Futuristic Design System */
 
 @layer base {
   :root {
-    /* Core earth tone palette */
-    --background: 32 20% 97%;
-    --foreground: 25 15% 15%;
-
-    --card: 30 25% 95%;
-    --card-foreground: 25 15% 15%;
-
-    --popover: 30 25% 95%;
-    --popover-foreground: 25 15% 15%;
-
-    /* Rich brown primary inspired by Rwandan soil */
-    --primary: 25 35% 25%;
-    --primary-foreground: 32 20% 97%;
-
-    /* Warm cream secondary */
-    --secondary: 35 30% 88%;
-    --secondary-foreground: 25 35% 25%;
-
-    /* Soft muted tones */
-    --muted: 35 25% 90%;
-    --muted-foreground: 25 20% 45%;
-
-    /* Golden accent for highlights */
-    --accent: 45 85% 65%;
-    --accent-foreground: 25 35% 25%;
-
-    /* Traditional deep green */
-    --success: 120 40% 35%;
-    --success-foreground: 32 20% 97%;
-
-    /* Soft orange for warmth */
-    --warm: 25 70% 70%;
-    --warm-foreground: 25 35% 25%;
-
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 32 20% 97%;
-
-    --border: 35 20% 85%;
-    --input: 35 20% 90%;
-    --ring: 45 85% 65%;
-
-    --radius: 0.5rem;
-
-    /* Cultural design elements */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--warm)) 100%);
-    --gradient-warm: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--warm)) 100%);
-    --gradient-earth: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+    /* Modern vibrant color palette */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
     
-    /* Traditional patterns and shadows */
-    --shadow-traditional: 0 8px 32px -8px hsl(var(--primary) / 0.15);
-    --shadow-golden: 0 4px 20px -4px hsl(var(--accent) / 0.25);
-    --shadow-soft: 0 2px 12px -2px hsl(var(--primary) / 0.08);
-
-    /* Animation transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-    --radius: 0.75rem;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Vibrant primary - modern emerald/cyan */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Modern secondary - soft slate */
+    --secondary: 240 4.8% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted tones */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    /* Accent - vibrant cyan */
+    --accent: 188 94% 43%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Success - modern green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Warm - vibrant orange */
+    --warm: 24 95% 53%;
+    --warm-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 25%;
+    --input: 240 3.7% 25%;
+    --ring: 142 76% 36%;
+    
+    --radius: 1rem;
+    
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(188, 94%, 43%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 10%, 8%) 50%, hsl(240, 10%, 3.9%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240, 10%, 6%) 0%, hsl(240, 10%, 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(188, 94%, 43%) 0%, hsl(142, 76%, 36%) 100%);
+    
+    /* Modern shadows with glow */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px hsl(142, 76%, 36% / 0.3);
+    --shadow-glow-accent: 0 0 30px hsl(188, 94%, 43% / 0.4);
+    
+    /* Smooth transitions */
+    --transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-
+  
   .dark {
-    /* Dark mode with warm earth tones */
-    --background: 25 15% 8%;
-    --foreground: 32 20% 92%;
-
-    --card: 25 20% 12%;
-    --card-foreground: 32 20% 92%;
-
-    --popover: 25 20% 12%;
-    --popover-foreground: 32 20% 92%;
-
-    --primary: 45 85% 65%;
-    --primary-foreground: 25 15% 8%;
-
-    --secondary: 25 25% 18%;
-    --secondary-foreground: 32 20% 92%;
-
-    --muted: 25 25% 18%;
-    --muted-foreground: 35 15% 65%;
-
-    --accent: 45 85% 65%;
-    --accent-foreground: 25 15% 8%;
-
-    --success: 120 40% 45%;
-    --success-foreground: 32 20% 92%;
-
-    --warm: 25 60% 55%;
-    --warm-foreground: 25 15% 8%;
-
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 32 20% 92%;
-
-    --border: 25 25% 18%;
-    --input: 25 25% 18%;
-    --ring: 45 85% 65%;
-    /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--warm)) 100%);
-    --gradient-warm: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--warm)) 100%);
-    --gradient-earth: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
-    
-    /* Dark mode shadows */
-    --shadow-traditional: 0 8px 32px -8px hsl(var(--accent) / 0.2);
-    --shadow-golden: 0 4px 20px -4px hsl(var(--accent) / 0.3);
-    --shadow-soft: 0 2px 12px -2px hsl(var(--accent) / 0.1);
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 188 94% 43%;
+    --accent-foreground: 0 0% 98%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    --warm: 24 95% 53%;
+    --warm-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 25%;
+    --input: 240 3.7% 25%;
+    --ring: 142 76% 36%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
-  /* Traditional Rwandan pattern elements */
-  .pattern-imigongo {
-    background-image: 
-      radial-gradient(circle at 25% 25%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, hsl(var(--warm) / 0.1) 0%, transparent 50%);
+@layer utilities {
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .hero-gradient {
-    background: var(--gradient-hero);
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
-  .shadow-traditional {
-    box-shadow: var(--shadow-traditional);
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   
-  .shadow-golden {
-    box-shadow: var(--shadow-golden);
+  /* Glow effects */
+  .glow {
+    box-shadow: var(--shadow-glow);
   }
+  
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+  
+  /* Modern card hover */
+  .card-hover {
+    transition: var(--transition-base);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+  }
+  
+  /* Smooth fade in */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* Pulse animation */
+  .pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
 }
