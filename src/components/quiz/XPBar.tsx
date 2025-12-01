@@ -37,7 +37,7 @@ export default function XPBar({
               <span>+{xpGained} XP</span>
             </div>
           )}
-          <span className="text-muted-foreground">
+          <span className="text-muted-foreground" >
             {displayXP} / {nextLevelXP} XP
           </span>
         </div>
